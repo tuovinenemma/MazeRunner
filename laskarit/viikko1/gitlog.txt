@@ -1,0 +1,169 @@
+git log --stat | cat 
+
+commit ceceae636a2b9c93c648e3435f9f39dd410672e0 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 18:04:59 2022 +0200 
+
+  
+
+    poisto ja muutos 
+
+  
+
+tiedostoja/file22 | 0 
+
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+  
+
+commit 42c12e0dd56afb7afd4892f420371dea44222838 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 18:03:37 2022 +0200 
+
+  
+
+    tiedostot 
+
+  
+
+tiedostoja/file1 | 0 
+
+tiedostoja/file2 | 0 
+
+tiedostoja/file3 | 0 
+
+3 files changed, 0 insertions(+), 0 deletions(-) 
+
+  
+
+commit e030b827bf80af01662948cd38ccb226957e2bb4 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 18:01:27 2022 +0200 
+
+  
+
+    muutokset 
+
+  
+
+tiedosto.txt => eka.txt | 0 
+
+toinen.txt              | 0 
+
+2 files changed, 0 insertions(+), 0 deletions(-) 
+
+  
+
+commit d370a8e9b7b79fa644d7a1598611e4ddf415d67a 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 17:59:02 2022 +0200 
+
+  
+
+    tekstin poisto 
+
+  
+
+tiedosto.txt | 2 +- 
+
+1 file changed, 1 insertion(+), 1 deletion(-) 
+
+  
+
+commit aa799645117d0bf8669752fa81e5c2cd4c0dfdd8 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 17:58:21 2022 +0200 
+
+  
+
+    tekstiä 
+
+  
+
+tiedosto.txt | 2 +- 
+
+1 file changed, 1 insertion(+), 1 deletion(-) 
+
+  
+
+commit 7a0050d2f9009060446e165693271a6ab2260122 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 17:57:21 2022 +0200 
+
+  
+
+    lisäykset 
+
+  
+
+stuff/tiedosto | 0 
+
+toinen.txt     | 0 
+
+2 files changed, 0 insertions(+), 0 deletions(-) 
+
+  
+
+commit 3d823d9cd786d5de101b4b9c4d3e2a3c23f8343e 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 17:55:49 2022 +0200 
+
+  
+
+    kolmas.txt 
+
+  
+
+kolmas.txt | 0 
+
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+  
+
+commit a61dc106e934b69105fb6a2e4ee828f3401f0123 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 17:55:01 2022 +0200 
+
+  
+
+    muutos 
+
+  
+
+tiedosto.txt | 1 + 
+
+1 file changed, 1 insertion(+) 
+
+  
+
+commit 19b3493de576793856f1a98b623f4893c5015173 
+
+Author: emma <emmasofia@live.fi> 
+
+Date:   Tue Nov 8 17:54:16 2022 +0200 
+
+  
+
+    tiedosto.txt 
+
+  
+
+tiedosto.txt | 0 
+
+1 file changed, 0 insertions(+), 0 deletions(-) 
