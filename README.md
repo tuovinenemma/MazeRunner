@@ -12,4 +12,4 @@ Viikko 1
 
 Viikko 2
 
-[testikattavuusraportti]
+[testikattavuusraportti](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/laskarit/viikko2/Screenshot%20from%202022-11-15%2021-30-00.png)
