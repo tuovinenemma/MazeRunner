@@ -1,30 +1,59 @@
+
 import unittest
 from maksukortti import Maksukortti
 
 class TestMaksukortti(unittest.TestCase):
     def setUp(self):
-        self.maksukortti = Maksukortti(10)
+        self.kortti = Maksukortti(1000)
 
-    def test_luotu_kortti_on_olemassa(self):
-        self.assertNotEqual(self.maksukortti, None)
+    def test_konstruktori_asettaa_saldon_oikein(self):
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 10.00 euroa")
 
-    def test_kortin_saldo_alussa_oikein(self):
-        self.assertEqual(str(self.maksukortti), "saldo: 0.1")
+    def test_syo_edullisesti_vahentaa_saldoa_oikein(self):
+        self.kortti.syo_edullisesti()
 
-    def test_rahan_lataaminen_kasvattaa_saldoa_oikein(self):
-        self.maksukortti.lataa_rahaa(990)
-        self.assertEqual(str(self.maksukortti), "saldo: 10.0")
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 7.50 euroa")
 
-    def test_saldo_vahenee_jos_tarpeeksi_rahaa(self):
-        self.maksukortti.ota_rahaa(5)
-        self.assertEqual(str(self.maksukortti), "saldo: 0.05")
+    def test_syo_maukkaasti_vahentaa_saldoa_oikein(self):
+        self.kortti.syo_maukkaasti()
 
-    def test_saldo_ei_muutu_jos_rahaa_ei_ole_tarpeeksi(self):
-        self.maksukortti.ota_rahaa(100)
-        self.assertEqual(str(self.maksukortti), "saldo: 0.1")
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 6.00 euroa")
 
-    def test_metodi_palauttaa_true_jos_tarpeeksi_rahaa(self):
-        self.assertTrue(self.maksukortti.ota_rahaa(5))
+    def test_syo_edullisesti_ei_vie_saldoa_negatiiviseksi(self):
+        kortti = Maksukortti(200)
+        kortti.syo_edullisesti()
 
-    def test_metodi_palauttaa_false_jos_ei_tarpeeksi_rahaa(self):
-        self.assertFalse(self.maksukortti.ota_rahaa(1000))
+        self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
+
+    def test_kortille_voi_ladata_rahaa(self):
+        self.kortti.lataa_rahaa(2500)
+
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 35.00 euroa")
+
+    def test_kortin_saldo_ei_ylita_maksimiarvoa(self):
+        self.kortti.lataa_rahaa(20000)
+
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 150.00 euroa")
+
+    def test_syo_maukkaasti_ei_vie_saldoa_negatiiviseksi(self):
+        kortti = Maksukortti(200)
+        kortti.syo_maukkaasti()
+
+        self.assertEqual(str(kortti), "Kortilla on rahaa 2.00 euroa")
+
+    def test_negatiivisen_summan_lataaminen_ei_muuta_kortin_arvoa(self):
+        self.kortti.lataa_rahaa(-100)
+
+        self.assertEqual(str(self.kortti), "Kortilla on rahaa 10.00 euroa")
+
+    def test_voi_ostaa_edullisen_lounaan_kun_saldoa_2_50_euroa(self):
+        kortti = Maksukortti(250)
+        kortti.syo_edullisesti()
+
+        self.assertEqual(str(kortti), "Kortilla on rahaa 0.00 euroa")
+
+    def test_voi_ostaa_maukkaan_lounaan_kun_saldoa_4_euroa(self):
+        kortti = Maksukortti(400)
+        kortti.syo_maukkaasti()
+
+        self.assertEqual(str(kortti), "Kortilla on rahaa 0.00 euroa")
