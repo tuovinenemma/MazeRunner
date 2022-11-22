@@ -4,4 +4,4 @@
 * Luotu Maze-luokka joka luo pelin ensimmäisen labyrintin.
 * Luotu ensimmäinen hahmo ja (hyvin) alkeellinen liikkuminen.
 * Alettu kehittämään pelille teemaa "Maze Runner".
-* Testattu pelin tilojen toimivuus.
+* Testattu pelin tilojen toimivuus ja hahmon liikkuminen.
