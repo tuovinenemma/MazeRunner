@@ -46,19 +46,19 @@ class Game:
     def _playing(self):
         self._start_game()
         while True:
-            self._events._handle_events()
-            if self._events._key_pressed == "quit":
+            key_pressed = self._events._handle_events()
+            if key_pressed == "quit":
                 return
-            self._render()
+            self._render(key_pressed)
             pygame.display.update()
             self._clock.tick(60)
     
-    def _render(self):
+    def _render(self, key_pressed):
         self._screen.fill((255, 255, 255))
         pygame.mouse.set_visible(0)  
         self._maze._make_maze()
-        self._move_player()
-        self._screen.blit(self._player._playerone, (self._player.rect.x, self._player.rect.y))
+        self._player._move_player(key_pressed)
+        self._player._render_player(self._screen)
         self._game_text2()
 
 
@@ -69,28 +69,4 @@ class Game:
         screen.blit(text, pos)
         
     def _game_text2(self):
-
         self._game_text(f'PRESS "Q" TO QUIT THE GAME', self._screen, [250, 845], 25, (0, 0, 0), 'arial black')
-
-
-
-    def _move_player(self):
-        key_pressed = self._events._key_pressed
-        self._key = key_pressed
-
-        if key_pressed == "l":
-            self._player.rect.x -= 1
-        if key_pressed == "r":
-            self._player.rect.x += 1
-        if key_pressed == "u":
-            self._player.rect.y -= 1
-        if key_pressed == "d":
-            self._player.rect.y += 1
-        
-        if self._player.rect.x < 0:
-            self._player.rect.x = 700
-            self._screen.blit(self._player._playerone, (self._player.rect.x, self._player.rect.y))
-            
-        elif self._player.rect.x > 700:
-            self._player.rect.x = 0
-            self._screen.blit(self._player._playerone, (self._player.rect.x, self._player.rect.y))

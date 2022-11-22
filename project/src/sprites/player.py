@@ -15,3 +15,20 @@ class Player(pygame.sprite.Sprite):
         self.rect.x = 323
         self.rect.y = 625
         self._events = HandleEvents()
+    
+    def _move_player(self, direction):
+        if direction == "l":
+            self.rect.x -= 1
+        if direction == "r":
+            self.rect.x += 1
+        if direction == "u":
+            self.rect.y -= 1
+        if direction == "d":
+            self.rect.y += 1
+        if self.rect.x < 0:
+            self.rect.x = 700
+        elif self.rect.x > 700:
+            self.rect.x = 0
+        
+    def _render_player(self, screen):
+        screen.blit(self._playerone, (self.rect.x, self.rect.y))
