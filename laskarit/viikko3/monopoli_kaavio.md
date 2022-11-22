@@ -1,93 +1,41 @@
-
-
 ```mermaid
-
-  classDiagram
-    Pelilauta <|-- Pelaaja
-    Pelilauta <|-- Noppa1
-    Pelilauta <|-- Noppa2
-    Pelilauta <|-- Aloitusruutu
-    Pelilauta <|-- Vankila
-    Pelilauta <|-- Sattumaruutu
-    Pelilauta <|-- Yhteismaaruutu
-    Pelilauta <|-- Kadut
-    Pelilauta <|-- Asema
-    Pelilauta <|-- Laitos
-    Sattumaruutu <|-- Sattumakortit
-    Yhteismaaruutu <|-- Yhteismaakortit
-    Pelaaja <|-- Pankkitili
-
-    class Pelaaja{
-      nimi
-      pelinappula
-      siirra()
-      ruutu
-
-    }
-
-    class Pelilauta{
-           
-    }
-
-      class Noppa_1{
-        heita()
+ classDiagram
+      Pelaaja "2-8" -- "1" Peli
+      Vuoro "1" -- "1" Peli
+      Pelilauta "1" -- "1" Peli
+      Noppa "2" -- "1" Vuoro
+      Pelinappula "2-8" -- "2-8" Pelaaja
+      Ruutu "40" -- "1" Pelilauta
+      Ruutu "40" -- "1" Pelinappula
+      
+      
+      class Peli{
       }
-
-      class Noppa_2{      
-        heita()
+      class Vuoro{
+          vuoro_id
       }
-      
-      class Aloitusruutu{
-        sijainti
-        toiminto()
+      class Noppa{
+          arvo
+          heitä()
       }
-      
-      class Vankila{
-        sijainti
-        toiminto()
+      class Pelaaja{
+          id
+          nimi
+          rahamäärä
       }
-      class Sattumaruutu{
-      
-      toiminto()
-        
+      class Pelinappula{
+          pelaaja_id
+          sijainti
       }
-      
-      class Yhteismaaruutu{
-      
-      toiminto()
-        
+      class Pelilauta{
+          id
+          content
+          done
       }
-      
-     
-      class Sattumakortit{
-        toiminto()
-      }
-      
-      class Yhteismaakortit{
-        toiminto()
-      }
-      
-      class Kadut{
-        nimi
-        omistaja
-        rakenna_talo()
-        rakenna_hotelli()
-      }
-      
-      class Asema{
-      
-      toiminto()
-      
-      }
-      
-      class Laitos{
-      
-      toiminto()
-      
-      }
-      
-      class Pankkitili{
-        saldo
-        maksutapahtuma()
+      class Ruutu{
+          ruutu_id
+          seuraava_id
+          edellinen_id
+          
       }
 ```
