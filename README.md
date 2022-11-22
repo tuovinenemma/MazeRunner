@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka
 
-### Yksinkertainen sokkelopeli/tasohyppelypeli
+### MazeRunner
 
 ## Dokumentaatiot
 
@@ -8,4 +8,4 @@
 
 [työaikakirjanpito](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-
+[changelog](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/changelog.md)
