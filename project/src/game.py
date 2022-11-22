@@ -15,9 +15,9 @@ class Game:
         self._width = 700
         self._height = 875
         self._screen = pygame.display.set_mode((self._width, self._height))
-        pygame.display.set_caption("Game")
-        self._maze = Maze(self._screen)
+        self._maze = Level(self._screen)
         self._key = "0"
+        self._speed = 1
         self._events = HandleEvents()
         self._start = Start(self._events, self._clock)
         self._end = GameOver(self._clock, self._events)
