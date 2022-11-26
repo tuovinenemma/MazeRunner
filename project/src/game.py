@@ -58,6 +58,7 @@ class Game:
         pygame.mouse.set_visible(0)  
         self._maze._make_maze()
         self._player._move_player(key_pressed)
+        self._player._player_collision(key_pressed)
         self._player._render_player(self._screen)
         self._game_text2()
 
