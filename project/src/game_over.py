@@ -1,5 +1,6 @@
-import pygame
 import sys
+import pygame
+
 
 class GameOver:
     def __init__(self, clock, events):
@@ -11,11 +12,11 @@ class GameOver:
         self._height = 875
         self._events = events
         self._screen = pygame.display.set_mode((self._width, self._height))
-        
+
     def _end_game(self):
         self._end_text2()
         pygame.display.update()
-        
+
     def _end_screen(self):
         self._end_game()
         while True:
@@ -27,11 +28,11 @@ class GameOver:
             self._render()
             pygame.display.update()
             self._clock.tick(60)
-        
+
     def _game_ending(self):
         if self._state == "game over":
             self._ending()
-            
+
     def _render(self):
         self._end_text2()
 
@@ -43,9 +44,12 @@ class GameOver:
             pos[0] = pos[0]-text_size[0]//2
             pos[1] = pos[1]-text_size[1]//2
         screen.blit(text, pos)
-        
+
     def _end_text2(self):
         self._screen.fill((255, 255, 255))
-        self._end_text1('PRESS "R" TO RESTART THE GAME', self._screen, [self._width//2, self._height//2+400], 30, (0, 0, 0), 'arial black', middle=True)
-        self._end_text1('PRESS "E" TO EXIT THE GAME', self._screen, [self._width//2, self._height//2+350], 30, (0, 0, 0), 'arial black', middle=True)
-        self._end_text1('GAME OVER', self._screen, [self._width//2, self._height//2-50], 45, (0, 0, 0), 'arial black', middle=True)
+        self._end_text1('PRESS "R" TO RESTART THE GAME', self._screen, [
+                        self._width//2, self._height//2+400], 30, (0, 0, 0), 'arial black', middle=True)
+        self._end_text1('PRESS "E" TO EXIT THE GAME', self._screen, [
+                        self._width//2, self._height//2+350], 30, (0, 0, 0), 'arial black', middle=True)
+        self._end_text1('GAME OVER', self._screen, [
+                        self._width//2, self._height//2-50], 45, (0, 0, 0), 'arial black', middle=True)

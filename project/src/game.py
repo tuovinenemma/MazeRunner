@@ -1,13 +1,15 @@
 import os
 import pygame
-from level import *
-from events import *
+from level import Level
+from events import HandleEvents
 from game_over import GameOver
 from start_game import Start
 from sprites.player import Player
 dirname = os.path.dirname(__file__)
+
+
 class Game:
-    
+
     def __init__(self):
         pygame.init()
         self._clock = pygame.time.Clock()
@@ -26,9 +28,10 @@ class Game:
     def _start_game(self):
 
         self._maze._create_maze()
-        self._screen.blit(self._player._playerone, (self._player.rect.x, self._player.rect.y))
+        self._screen.blit(self._player._playerone,
+                          (self._player.rect.x, self._player.rect.y))
         self._game_text2()
-        
+
         pygame.display.update()
 
     def _game_running(self):
@@ -42,7 +45,7 @@ class Game:
             if self._state == "game over":
                 self._end._end_screen()
                 self._state = "start"
-  
+
     def _playing(self):
         self._start_game()
         while True:
@@ -52,22 +55,21 @@ class Game:
             self._render(key_pressed)
             pygame.display.update()
             self._clock.tick(60)
-    
+
     def _render(self, key_pressed):
         self._screen.fill((255, 255, 255))
-        pygame.mouse.set_visible(0)  
+        pygame.mouse.set_visible(0)
         self._maze._make_maze()
         self._player._move_player(key_pressed)
         self._player._player_collision(key_pressed)
         self._player._render_player(self._screen)
         self._game_text2()
 
-
     def _game_text(self, words, screen, pos, size, colour, font_name):
         font = pygame.font.SysFont(font_name, size)
         text = font.render(words, False, colour)
-        text_size = text.get_size()
         screen.blit(text, pos)
-        
+
     def _game_text2(self):
-        self._game_text(f'PRESS "Q" TO QUIT THE GAME', self._screen, [250, 845], 25, (0, 0, 0), 'arial black')
+        self._game_text('PRESS "Q" TO QUIT THE GAME', self._screen, [
+                        250, 845], 25, (0, 0, 0), 'arial black')

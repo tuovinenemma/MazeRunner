@@ -1,5 +1,4 @@
 import pygame
-from events import *
 
 class Start:
     def __init__(self, events, clock):
@@ -10,11 +9,11 @@ class Start:
         self._height = 875
         self._events = events
         self._screen = pygame.display.set_mode((self._width, self._height))
-        
+
     def _start_game(self):
         self._start_text2()
         pygame.display.update()
-        
+
     def _start_screen(self):
         self._start_game()
         while True:
@@ -23,11 +22,11 @@ class Start:
                 return
             pygame.display.update()
             self._clock.tick(60)
-        
+
     def _game_starting(self):
         if self._state == "start":
             self._starting()
-            
+
     def _render(self):
 
         self._start_text2()
@@ -40,7 +39,7 @@ class Start:
             pos[0] = pos[0]-text_size[0]//2
             pos[1] = pos[1]-text_size[1]//2
         screen.blit(text, pos)
-        
+
     def _start_text2(self):
         pygame.mouse.set_visible(0)
         self._screen.fill((255, 255, 255))
