@@ -61,7 +61,6 @@ class Game:
         pygame.mouse.set_visible(0)
         self._maze._make_maze()
         self._player._move_player(key_pressed)
-        self._player._player_collision(key_pressed)
         self._player._render_player(self._screen)
         self._game_text2()
 
@@ -73,3 +72,4 @@ class Game:
     def _game_text2(self):
         self._game_text('PRESS "Q" TO QUIT THE GAME', self._screen, [
                         250, 845], 25, (0, 0, 0), 'arial black')
+
