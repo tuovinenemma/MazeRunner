@@ -1,16 +1,22 @@
 # Ohjelmistotekniikka
 
+Harjoitustyö Helsingin yliopiston Ohjelmistotekniikka-kurssille.
+
 ## MazeRunner
 
 Sokkelopelissä MazeRunner pelaajan on tarkoitus selvittää reitti turvaan. Reittiä etsiessään hän kohtaa vihollisia ja palkkiota joilla on seuraukset pelin kulkuun. Pelin tarkoitus on läpäistä kenttiä ja saavuttaa mahdollisimman suuri HIGH SCORE.
 
+Sovellus on toteutettu Python -versiolla 3.8
+
 ## Dokumentaatiot
 
-[vaatimusmäärittely](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/vaatimusmaarittely.md)
+* [vaatimusmäärittely](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-[työaikakirjanpito](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/tuntikirjanpito.md)
+* [työaikakirjanpito](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-[changelog](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/changelog.md)
+* [changelog](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/changelog.md)
+
+* [arkkitehtuuri](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 
 ## Asennus
@@ -51,4 +57,12 @@ Testikattavuusraportin voi generoida komennolla:
 
 ```bash
 poetry run invoke coverage-report
+```
+
+### Pylint
+
+Tiedoston [.pylintrc](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/project/.pylintrc) määrittelemät tarkistukset voi suorittaa komennolla:
+
+```bash
+poetry run invoke lint
 ```
