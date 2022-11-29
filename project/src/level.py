@@ -7,6 +7,7 @@ class Level:
     def __init__(self, screen):
         self._screen = screen
         self._all_units = pygame.sprite.Group()
+        self._all_walls = pygame.sprite.Group()
         self._walls = pygame.sprite.Group()
         self._moss = pygame.sprite.Group()
         self._paths = pygame.sprite.Group()
@@ -29,6 +30,7 @@ class Level:
     def _group_units(self):
 
         self._all_units.add(self._paths, self._walls, self._moss, self._moss2)
+        self._all_walls.add(self._walls, self._moss, self._moss2)
 
     def _add_units(self, unit, x, y):
         if unit == 1:
@@ -40,10 +42,10 @@ class Level:
                 self._paths.add(Path(x, y))
 
             if unit == 3:
-                self._paths.add(Moss(x, y))
+                self._moss.add(Moss(x, y))
 
             if unit == 4:
-                self._paths.add(Moss2(x, y))
+                self._moss2.add(Moss2(x, y))
 
     def _make_maze(self):
 

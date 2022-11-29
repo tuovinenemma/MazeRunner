@@ -13,7 +13,7 @@ class Player(pygame.sprite.Sprite):
         self._playerone = pygame.image.load(
             os.path.join(dirname, "..", "assets", "player.png"))
         self._playerone = pygame.transform.smoothscale(
-            self._playerone, (25, 25))
+            self._playerone, (15, 15))
         self._width = 700
         self._height = 875
         self._screen = pygame.display.set_mode((self._width, self._height))
@@ -26,7 +26,7 @@ class Player(pygame.sprite.Sprite):
         self._events = HandleEvents()
         self._maze = Level(self._screen)
 
-    def _move_player(self, direction, collision=None):
+    def _move_player(self, direction, collision=False):
         if collision:
             if direction == "l":
                 self.rect.x -= 1

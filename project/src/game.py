@@ -61,6 +61,9 @@ class Game:
         pygame.mouse.set_visible(0)
         self._maze._make_maze()
         self._player._move_player(key_pressed)
+        if self._collision_check() == True:
+            self._change_direction()
+            self._player._move_player(self._events._key_pressed)
         self._player._render_player(self._screen)
         self._game_text2()
 
@@ -73,3 +76,20 @@ class Game:
         self._game_text('PRESS "Q" TO QUIT THE GAME', self._screen, [
                         250, 845], 25, (0, 0, 0), 'arial black')
 
+    def _collision_check(self):
+        collision = pygame.sprite.spritecollide(self._player, self._maze._all_walls, False)
+        if collision:
+            return True
+        else:
+            print("False")
+            return False
+
+    def _change_direction(self):
+        if self._events._key_pressed == "l":
+            self._events._key_pressed = "r"
+        if self._events._key_pressed == "r":
+            self._events._key_pressed = "l"
+        if self._events._key_pressed == "u":
+            self._events._key_pressed = "d"
+        if self._events._key_pressed == "d":
+            self._events._key_pressed = "u"
