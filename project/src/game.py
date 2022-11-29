@@ -61,7 +61,7 @@ class Game:
         pygame.mouse.set_visible(0)
         self._maze._make_maze()
         self._player._move_player(key_pressed)
-        if self._collision_check() == True:
+        if self._collision_check() is True:
             self._change_direction()
             self._player._move_player(self._events._key_pressed)
         self._player._render_player(self._screen)
@@ -77,12 +77,12 @@ class Game:
                         250, 845], 25, (0, 0, 0), 'arial black')
 
     def _collision_check(self):
+        collision = False
         collision = pygame.sprite.spritecollide(self._player, self._maze._all_walls, False)
         if collision:
             return True
-        else:
-            print("False")
-            return False
+        return collision
+
 
     def _change_direction(self):
         if self._events._key_pressed == "l":

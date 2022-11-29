@@ -48,7 +48,3 @@ class Player(pygame.sprite.Sprite):
 
     def _render_player(self, screen):
         screen.blit(self._playerone, (self.rect.x, self.rect.y))
-
-
-
-
