@@ -1,6 +1,6 @@
 # Yksinkertainen sokkelopeli/tasohyppelypeli
 
-### Sokkelopelissä (nimi vielä hukassa..) pelaajan on tarkoitus selvittää reitti turvaan. Reittiä etsiessään hän kohtaa vihollisia ja palkkiota joilla on seuraukset pelin kulkuun. Pelin tarkoitus on läpäistä kenttiä ja saavuttaa mahdollisimman suuri HIGH SCORE.
+### Sokkelopelissä MazeRunner pelaajan on tarkoitus selvittää reitti turvaan. Reittiä etsiessään hän kohtaa vihollisia ja palkkiota joilla on seuraukset pelin kulkuun. Pelin tarkoitus on läpäistä kenttiä ja saavuttaa mahdollisimman suuri HIGH SCORE.
 
 ### Sovelluksen omainaisuudet:
 * Sovelluksessa pelaaja voi kulkea eri tasoisissa sokkelokentissä ja edetä näissä eteenpäin läpäitsemällä tason. (Ensimmäinen kenttä tehty)
