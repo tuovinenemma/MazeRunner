@@ -12,6 +12,8 @@ Sokkelopelissä MazeRunner pelaajan on tarkoitus selvittää reitti turvaan. Rei
 
 [changelog](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/changelog.md)
 
+[arkkitehtuuri](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 
 ## Asennus
 
