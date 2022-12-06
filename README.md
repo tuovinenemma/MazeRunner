@@ -20,7 +20,7 @@ Sovellus on toteutettu Python -versiolla 3.8
 
 ## Release
 
-[Release](https://github.com/tuovinenemma/ot-harjoitustyo2022/releases/tag/viikko5)
+[Viikon 5 release](https://github.com/tuovinenemma/ot-harjoitustyo2022/releases/tag/viikko5)
 
 
 ## Asennus
