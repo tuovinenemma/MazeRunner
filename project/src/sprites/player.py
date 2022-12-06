@@ -20,8 +20,8 @@ class Player(pygame.sprite.Sprite):
         self.screen_rect = self._screen.get_rect()
         self._speed = speed
         self.rect = self._player.get_rect()
-        self.rect.x = 323
-        self.rect.y = 625
+        self.rect.x = 340
+        self.rect.y = 460
         self._events = HandleEvents()
         self._maze = Level(self._screen)
 

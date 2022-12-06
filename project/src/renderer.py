@@ -13,7 +13,7 @@ class Renderer:
         self._screen.fill((255, 255, 255))
         self._level._all_units.draw(self._screen)
         self._screen.blit(self._player._player, (self._player.rect.x, self._player.rect.y))
-        self.render_game_text(f'POINTS: {points} PRESS "Q" TO QUIT THE GAME', [
+        self.render_game_text(f'POINTS: {points} PRESS "Q" TO QUIT ', [
                         200, 845], 25, (0, 0, 0), 'arial black')
         pygame.display.update()
 
