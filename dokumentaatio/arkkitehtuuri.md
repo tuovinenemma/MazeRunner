@@ -10,3 +10,21 @@ Käyttöliittymä sisältää kolme erillistä näkymää:
 * Pelin aloitus
 * Pelikenttä
 * Pelin lopetus
+
+```mermaid
+classDiagram
+  StartGame--|>Game
+  Game--|>GameOver
+  
+  class StartGame{
+    state = start
+    
+   }
+  class Game{
+    state = playing
+  }
+  
+  class GameOver{
+    state = game over
+  }
+```
