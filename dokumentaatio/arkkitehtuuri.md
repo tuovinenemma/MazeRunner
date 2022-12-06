@@ -12,20 +12,14 @@ Käyttöliittymä sisältää kolme erillistä näkymää:
 * Pelin lopetus
 
 ```mermaid
-classDiagram
-  StartGame--|>Game
-  Game--|>GameOver
-  
-  class StartGame{
-    state = start
-    
-   }
-  class Game{
-    state = playing
-  }
-  
-  class GameOver{
-    state = game over
-  }
-```
+
+sequenceDiagram
+participant StartGame
+participant Game
+participant GameOver
+
+StartGame->>Game: start_game()
+Game->>GameOver: end_game()
+GameOver->>Game: restart()
+GameOver->>StartGame: exit()
 
