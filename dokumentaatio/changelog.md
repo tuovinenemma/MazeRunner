@@ -15,5 +15,5 @@
 ## Viikko 5
 * Seinille parempi toimivuus hahmon törmäyksen kanssa.
 * Kentälle luotu kerättäviä esineitä.
-* Pistelaskuri ja ylläpitää kerätyistä esineistä kertyneitä pisteitä.
+* Luotu pistelaskuri joka ylläpitää kerätyistä esineistä kertyneitä pisteitä.
 * Hahmo pystyy poistumaan pelistä alhaalla olevasta "exit" ruudusta.
