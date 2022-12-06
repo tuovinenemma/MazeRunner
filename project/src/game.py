@@ -1,5 +1,6 @@
 import os
 import pygame
+from renderer import Renderer
 from level import Level
 from events import HandleEvents
 from game_over import GameOver
@@ -24,14 +25,14 @@ class Game:
         self._start = Start(self._events, self._clock)
         self._end = GameOver(self._clock, self._events)
         self._player = Player(self._speed)
+        self._renderer = Renderer(self._player, self._maze, self._screen)
+        self._points = 0
 
     def _start_game(self):
 
         self._maze._create_maze()
-        self._screen.blit(self._player._playerone,
+        self._screen.blit(self._player._player,
                           (self._player.rect.x, self._player.rect.y))
-        self._game_text2()
-
         pygame.display.update()
 
     def _game_running(self):
@@ -52,44 +53,29 @@ class Game:
             key_pressed = self._events._handle_events()
             if key_pressed == "quit":
                 return
+            if self._points >= 400 and self._player.rect.x >= 700:
+                return
+            self._collect_points()
             self._render(key_pressed)
-            pygame.display.update()
             self._clock.tick(60)
 
     def _render(self, key_pressed):
-        self._screen.fill((255, 255, 255))
-        pygame.mouse.set_visible(0)
-        self._maze._make_maze()
         self._player._move_player(key_pressed)
-        if self._collision_check() is True:
-            self._change_direction()
-            self._player._move_player(self._events._key_pressed)
-        self._player._render_player(self._screen)
-        self._game_text2()
-
-    def _game_text(self, words, screen, pos, size, colour, font_name):
-        font = pygame.font.SysFont(font_name, size)
-        text = font.render(words, False, colour)
-        screen.blit(text, pos)
-
-    def _game_text2(self):
-        self._game_text('PRESS "Q" TO QUIT THE GAME', self._screen, [
-                        250, 845], 25, (0, 0, 0), 'arial black')
+        if self._collision_check():
+            self._player._move_player(key_pressed, opposite=True)
+        self._renderer.render(self._points)
 
     def _collision_check(self):
         collision = False
         collision = pygame.sprite.spritecollide(self._player, self._maze._all_walls, False)
         if collision:
             return True
-        return collision
+        return False
 
-
-    def _change_direction(self):
-        if self._events._key_pressed == "l":
-            self._events._key_pressed = "r"
-        if self._events._key_pressed == "r":
-            self._events._key_pressed = "l"
-        if self._events._key_pressed == "u":
-            self._events._key_pressed = "d"
-        if self._events._key_pressed == "d":
-            self._events._key_pressed = "u"
+    def _collect_points(self):
+        collision = False
+        collision = pygame.sprite.spritecollide(self._player, self._maze._treasures, False)
+        for treasure in collision:
+            self._maze._treasures.remove(treasure)
+            self._maze._all_units.remove(treasure)
+            self._points += 100
