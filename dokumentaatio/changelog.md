@@ -11,3 +11,9 @@
 * Hahmolle collision tunniste.
 * Pelikentän seinät tunnistavat hahmon törmäyksen eikä päästä sitä niiden läpi.
 * Lisätty testattavuutta liikkumiselle
+
+## Viikko 5
+* Seinille parempi toimivuus hahmon törmäyksen kanssa.
+* Kentälle luotu kerättäviä esineitä.
+* Luotu pistelaskuri joka ylläpitää kerätyistä esineistä kertyneitä pisteitä.
+* Hahmo pystyy poistumaan pelistä alhaalla olevasta "exit" ruudusta.
