@@ -12,7 +12,7 @@
 * Pelikentän seinät tunnistavat hahmon törmäyksen eikä päästä sitä niiden läpi.
 * Lisätty testattavuutta liikkumiselle
 
-## Viikko5
+## Viikko 5
 * Seinille parempi toimivuus.
 * Kentälle luotu kerättäviä esineitä.
 * Pistelaskuri ja ylläoitää kerätyistä erineistä kertyneitä pisteitä.
