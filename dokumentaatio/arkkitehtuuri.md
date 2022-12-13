@@ -56,7 +56,7 @@ Toiminnallisista kokonaisuuksista vastaa luokka Game. Luokka tarjoaa käyttälii
 * exit_level()
 
 
-Luokan Game toiminnallisuus sekvenssikaaviona:
+Game luokassa kutsuttujen eri luokkien toiminnallisuus Game luokassa sekvenssikaaviona:
 
 ```mermaid
 
