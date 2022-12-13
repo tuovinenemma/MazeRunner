@@ -18,7 +18,7 @@
 * Luotu pistelaskuri joka ylläpitää kerätyistä esineistä kertyneitä pisteitä.
 * Hahmo pystyy poistumaan pelistä alhaalla olevasta "exit" ruudusta.
 
-## Viikko 5
+## Viikko 6
 * Uusi pelikenttä luotu.
 * Pelaajalle luotu toiminnallisuus joka mahdollistaa siirtymisen kentästä toiseen.
 * Pistelaskurilla pisteiden säilyvyys siirtyessä kentältä toiselle.
