@@ -20,6 +20,6 @@
 
 ## Viikko 5
 * Uusi pelikenttä luotu.
-* Pelaajalle luotu toiminninallisuus joka mahdollistaa siirtymisen kentästä toiseen.
+* Pelaajalle luotu toiminnallisuus joka mahdollistaa siirtymisen kentästä toiseen.
 * Pistelaskurilla pisteiden säilyvyys siirtyessä kentältä toiselle.
 * Luotu uudelle pelikentälle kerättävät esineet ja "exit" ruutu.
