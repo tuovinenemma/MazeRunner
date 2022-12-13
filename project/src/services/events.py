@@ -8,6 +8,8 @@ class GameEvents:
 
 
 class HandleEvents:
+    """Luokka, joka huolehtii mistä näppäimestä ollaan painettu
+    """
 
     def __init__(self):
         self._events = GameEvents()

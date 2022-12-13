@@ -7,6 +7,8 @@ dirname = os.path.dirname(__file__)
 
 
 class Player(pygame.sprite.Sprite):
+    """Luokka, joka luo pelaajan
+    """
 
     def __init__(self, speed):
         super().__init__()

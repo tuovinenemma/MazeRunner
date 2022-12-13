@@ -10,6 +10,8 @@ dirname = os.path.dirname(__file__)
 
 
 class Game:
+    """Luokka, joka vastaa pelin kulusta
+    """
 
     def __init__(self):
         pygame.init()
@@ -40,6 +42,8 @@ class Game:
         pygame.display.update()
 
     def _game_running(self):
+        """Tarkistaa pelin tilanteen
+        """
         while True:
             if self._state == "start":
                 self._start._start_screen()
@@ -73,6 +77,8 @@ class Game:
         self._renderer.render(self._points)
 
     def _collision_check(self):
+        """Tarkistaa törmäyksen
+        """
         collision = False
         if self._state == "game":
             collision = pygame.sprite.spritecollide(self._player, self._maze._all_walls, False)
@@ -83,6 +89,8 @@ class Game:
         return False
 
     def _collect_points(self):
+        """Kerää pisteitä
+        """
         collision = False
         collision = pygame.sprite.spritecollide(self._player, self._maze._treasures, False)
         for treasure in collision:
@@ -91,6 +99,8 @@ class Game:
             self._points += 100
 
     def _exit_level(self):
+        """Siirtää pelaajan seuraavaan kenttään
+        """
         collision = False
         collision = pygame.sprite.spritecollide(self._player, self._maze._exit, False)
         for exit in collision:
