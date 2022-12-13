@@ -77,14 +77,12 @@ class TestGame(unittest.TestCase):
     def test_render(self):
         self.game._state = "game"
         
-        # Player should not move when no key is pressed
         player_x = self.player.rect.x
         player_y = self.player.rect.y
         self.game._render(None)
         self.assertEqual(self.player.rect.x, player_x)
         self.assertEqual(self.player.rect.y, player_y)
         
-        # Player should move when a key is pressed
         self.player._move_player(direction="r")
         self.assertEqual(self.player.rect.x, player_x + self.player._speed)
         self.assertEqual(self.game._player.rect.y, player_y)
