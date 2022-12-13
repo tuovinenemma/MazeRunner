@@ -24,3 +24,11 @@ GameOver->>Game: restart()
 GameOver->>StartGame: exit()
 
 
+```
+
+Toiminnallisista kokonaisuuksista vastaa luokka Game. Luokka tarjoaa käyttäliittymän toiminnoille metodeja. Näitä ovat esimerkiksi:
+
+* start_game()
+* playing()
+* game_running()
+* exit_level()
