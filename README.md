@@ -18,6 +18,8 @@ Sovellus on toteutettu Python -versiolla 3.8
 
 * [arkkitehtuuri](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+* [käyttöohje](https://github.com/tuovinenemma/ot-harjoitustyo2022/blob/master/dokumentaatio/kayttoohje.md)
+
 ## Release
 
 [Viikon 5 release](https://github.com/tuovinenemma/ot-harjoitustyo2022/releases/tag/viikko5)
