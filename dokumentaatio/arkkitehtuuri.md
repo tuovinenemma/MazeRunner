@@ -1,7 +1,29 @@
 # Arkkitehtuurikuvaus
 ## Rakenne
 
-![Screenshot from 2022-11-29 19-32-30](https://user-images.githubusercontent.com/102189885/204601032-0a90e9b9-5c99-4518-aec4-a681539d6065.png)
+```mermaid
+
+classDiagram
+SRC
+UI
+services
+tests
+sprites
+assets
+
+SRC --> UI
+SRC --> services
+SRC --> tests
+SRC --> sprites
+SRC --> assets
+
+UI --> services
+services --> sprites
+services --> assets
+assets --> UI
+assets --> sprites
+
+```
 
 ## Käyttöliittymä
 
@@ -32,3 +54,19 @@ Toiminnallisista kokonaisuuksista vastaa luokka Game. Luokka tarjoaa käyttälii
 * playing()
 * game_running()
 * exit_level()
+
+
+Game luokassa kutsuttujen eri luokkien toiminnallisuus Game luokassa sekvenssikaaviona:
+
+```mermaid
+
+sequenceDiagram
+Game ->> Level: create maze
+Level ->> Game: create maze
+Game ->> Player: move player
+Player ->> Game: move player
+Game ->> Renderer: render
+Renderer ->> Game: render
+
+
+```
