@@ -1,7 +1,7 @@
 import os
 import pygame
-from events import HandleEvents
-from level import Level
+from services.events import HandleEvents
+from ui.level import Level
 
 dirname = os.path.dirname(__file__)
 
@@ -45,3 +45,7 @@ class Player(pygame.sprite.Sprite):
                 self.rect.y -= self._speed
             if direction == "d":
                 self.rect.y += self._speed
+
+    def _center_player(self):
+        self.rect.x = 340
+        self.rect.y = 460

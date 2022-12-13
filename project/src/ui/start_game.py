@@ -1,7 +1,9 @@
 import pygame
 
 class Start:
+    """Pelin alkunäytöstä vastaava näkymä"""
     def __init__(self, events, clock):
+        """Luokan konstruktori. Luo aloitusnäytön"""
         pygame.init()
         self._clock = clock
         self._state = "start"
@@ -15,6 +17,7 @@ class Start:
         pygame.display.update()
 
     def _start_screen(self):
+        """Näyttää näkymän ja käynnistää haluttaessa pelin"""
         self._start_game()
         while True:
             self._events._handle_events()

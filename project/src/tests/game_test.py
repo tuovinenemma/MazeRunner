@@ -1,6 +1,6 @@
 import unittest
-from game import Game
-from level import Treasure, Level
+from project.src.services.game import Game
+from project.src.ui.level import Treasure, Level
 from sprites.player import Player
 
 class TestGame(unittest.TestCase):

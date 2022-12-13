@@ -73,6 +73,8 @@ disable=raw-checker-failed,
         missing-class-docstring,
         w0212,
         e1101,
+        w0622,
+        c0412,
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

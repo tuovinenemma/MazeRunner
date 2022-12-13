@@ -3,8 +3,11 @@ import pygame
 
 
 class GameOver:
+    """Pelin loppunäyttöä vastaava näkymä
+    """
     def __init__(self, clock, events):
-
+        """Luokan konstruktori, joka luo loppunäytön
+        """
         pygame.init()
         self._clock = clock
         self._state = "game over"
@@ -18,6 +21,8 @@ class GameOver:
         pygame.display.update()
 
     def _end_screen(self):
+        """Ylläpitää loppunäkymää
+        """
         self._end_game()
         while True:
             self._events._handle_events()
@@ -30,6 +35,8 @@ class GameOver:
             self._clock.tick(60)
 
     def _game_ending(self):
+        """Tarkistaa game staten ja käynnistää pelin lopetuksen
+        """
         if self._state == "game over":
             self._ending()
 

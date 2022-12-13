@@ -1,8 +1,10 @@
 import pygame
 
 class Renderer:
+    """Pelin pelikentän teksteistä vastaava näkymä"""
 
     def __init__(self, player, level, screen):
+        """Luokan konstruktori"""
         self._player = player
         self._screen = screen
         self._level = level
@@ -18,6 +20,7 @@ class Renderer:
         pygame.display.update()
 
     def render_game_text(self, words, pos, size, colour, font_name):
+        """Luo pelinäytölle tekstit"""
         font = pygame.font.SysFont(font_name, size)
         text = font.render(words, False, colour)
         self._screen.blit(text, pos)
