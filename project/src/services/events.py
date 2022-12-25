@@ -36,6 +36,11 @@ class HandleEvents:
                     self._key_pressed = "restart"
                 if event.key == pygame.K_e:
                     self._key_pressed = "exit"
+                if event.key == pygame.K_b:
+                    self._key_pressed = "b"
+                if event.key == pygame.K_h:
+                    self._key_pressed = "h"
+
 
             if event.type == pygame.QUIT:
                 sys.exit()

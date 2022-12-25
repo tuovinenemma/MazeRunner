@@ -1,11 +1,9 @@
 import unittest
 from services.game import Game
-from ui.level import Treasure, Level, Exit
+from ui.level import Treasure, Exit
+from ui.levels import MAZE_ONE
 from sprites.player import Player
-from mock import Mock
-import pytest
-from ui.game_over import GameOver
-
+from Main import main
 
 class TestGame(unittest.TestCase):
     def setUp(self):
@@ -33,11 +31,11 @@ class TestGame(unittest.TestCase):
         self.assertEqual(str(self.game._points), "200")
 
     def test_player_starts_middle_at_maze(self):
-        self.assertEqual(str(self.player.rect.x), "340")
-        self.assertEqual(str(self.player.rect.y), "460")
+        self.assertEqual(str(self.player.rect.x), "330")
+        self.assertEqual(str(self.player.rect.y), "465")
 
     def test_creating_maze_works(self):
-        self.game._maze._create_maze()
+        self.game._maze._create_maze(MAZE_ONE)
         self.assertGreater(str(len(self.game._maze._all_units)), "0")
         self.assertGreater(str(len(self.game._maze._all_walls)), "0")
 
@@ -87,8 +85,37 @@ class TestGame(unittest.TestCase):
         self.assertEqual(self.player.rect.x, player_x + self.player._speed)
         self.assertEqual(self.game._player.rect.y, player_y)
 
+    def test_playing_calls_start_game(self):
+        self.game._playing = lambda: self.game._start_game()
+        self.game._playing()
+        self.assertEqual(self.game._state, "start")
+
+    def test_playing_exits_on_quit_event(self):
+        self.game._events._key_pressed = "quit"
+        self.game._playing()
+        self.assertEqual(self.game._points, 0)
+
+    def test_player_is_moved_left(self):
+        initial_position = self.player.rect.x, self.player.rect.y
+
+        self.player._move_player(direction="l")
+
+        current_position = self.player.rect.x, self.player.rect.y
+
+        self.assertEqual(initial_position[0] - self.player._speed, current_position[0])
+        self.assertEqual(initial_position[1], current_position[1])
 
 
+    def test_collision_check(self):
+        self.player.rect.x = 100
+        self.player.rect.y = 100
+        self.game._maze._create_maze(MAZE_ONE)
+        walls = self.game._maze._all_walls
 
+        self.assertFalse(self.game._collision_check())
 
+        self.player.rect.x = 200
+        self.player.rect.y = 200
+
+        self.assertFalse(self.game._collision_check())
 
