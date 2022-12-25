@@ -1,4 +1,5 @@
 import pygame
+from database.database import Database
 
 class Start:
     """Pelin alkunäytöstä vastaava näkymä"""
@@ -12,6 +13,7 @@ class Start:
         self._events = events
         self._monsters_count = 0
         self._screen = pygame.display.set_mode((self._width, self._height))
+        self._database = Database()
 
     def _start_game(self):
         self._start_text2()
@@ -26,20 +28,17 @@ class Start:
             if self._events._key_pressed == "b":
                 self._monsters_count = 10
                 self._start_text3()
+                self.get_leaders()
                 pygame.display.update()
             if self._events._key_pressed == "h":
                 self._monsters_count = 15
+                self.get_leaders()
                 self._start_text3()
                 pygame.display.update()
             if self._events._key_pressed == "space":
                 return
             pygame.display.update()
             self._clock.tick(60)
-
-    def _game_starting(self):
-        if self._state == "start":
-            self._starting()
-            pygame.display.update()
 
 
     def _render(self):
@@ -54,6 +53,20 @@ class Start:
             pos[1] = pos[1]-text_size[1]//2
         screen.blit(text, pos)
 
+    def get_leaders(self):
+        i = 20
+        font = pygame.font.SysFont("arial black", 24)
+        leaders = self._database.get_top_10()
+        for player in leaders:
+            name = player['player']
+            score = player['score']
+            column1 = font.render('{:>3}'.format(name), True, (0, 0, 0))
+            column2 = font.render('{:30}'.format(score), True, (0, 0, 0))
+            self._screen.blit(column1, ((200, 430 + i)))
+            self._screen.blit(column2, ((200 + 2, (430) + i)))
+
+            i += 20
+
     def _start_text2(self):
         pygame.mouse.set_visible(0)
         self._screen.fill((255, 255, 255))
@@ -61,7 +74,10 @@ class Start:
         self._start_text1('PRESS "B" TO CHOOSE BEGINNER', self._screen, [self._width//2, self._height//2-40], 30, (0, 0, 0), 'arial black', middle=True)
         self._start_text1('PRESS "H" TO CHOOSE HARD', self._screen, [self._width//2, self._height//2-1], 30, (0, 0, 0), 'arial black', middle=True)
 
+
     def _start_text3(self):
         pygame.mouse.set_visible(0)
         self._screen.fill((255, 255, 255))
-        self._start_text1('PRESS SPACE BAR TO ENTER THE MAZE', self._screen, [self._width//2, self._height//2-40], 30, (0, 0, 0), 'arial black', middle=True)
+        self._start_text1('PRESS SPACE BAR TO ENTER THE MAZE', self._screen, [self._width//2, self._height//2-150], 30, (0, 0, 0), 'arial black', middle=True)
+        self._start_text1('PLAYER NAME', self._screen, [190, 400], 25, (0, 0, 0), 'arial black', middle=True)
+        self._start_text1('POINTS', self._screen, [475, 400], 25, (0, 0, 0), 'arial black', middle=True)
