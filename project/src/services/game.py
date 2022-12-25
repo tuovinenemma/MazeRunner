@@ -66,13 +66,14 @@ class Game:
                 self._start._start_screen()
                 self._state = "game"
             if self._state == "game":
+                self._points = 0
                 self._playing()
                 self._state = "game over"
             if self._state == "game2":
                 self._playing()
                 self._state = "game over"
             if self._state == "game over":
-                self._end._end_screen()
+                self._end._end_screen(self._points)
                 self._state = "start"
 
     def _playing(self):
@@ -80,7 +81,6 @@ class Game:
         while True:
             key_pressed = self._events._handle_events()
             if key_pressed == "quit":
-                self._points = 0
                 return
             if self._lives == 0:
                 self._points = 0

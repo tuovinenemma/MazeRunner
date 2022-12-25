@@ -32,8 +32,8 @@ class Start:
                 pygame.display.update()
             if self._events._key_pressed == "h":
                 self._monsters_count = 15
-                self.get_leaders()
                 self._start_text3()
+                self.get_leaders()
                 pygame.display.update()
             if self._events._key_pressed == "space":
                 return

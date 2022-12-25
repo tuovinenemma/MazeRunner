@@ -3,6 +3,8 @@ import os
 from operator import itemgetter
 
 class Database():
+    """Konstruktori luo yhdeyden databaseen
+    """
 
     def __init__(self):
         dirname = os.path.dirname(__file__)

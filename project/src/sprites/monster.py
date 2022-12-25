@@ -4,6 +4,8 @@ import pygame
 dirname = os.path.dirname(__file__)
 
 class Monster(pygame.sprite.Sprite):
+    """Konstruktori luo vihollisen
+    """
 
     def __init__(self):
         super().__init__()
@@ -19,6 +21,8 @@ class Monster(pygame.sprite.Sprite):
         self._maze_walls = None
 
     def _monster_can_move(self, maze_walls):
+        """Huolehtii vihollisen liikkumisesta
+        """
         self._maze_walls = maze_walls
         if self.rect.y < 60:
             self.rect.y = 930
