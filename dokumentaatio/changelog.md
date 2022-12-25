@@ -23,3 +23,11 @@
 * Pelaajalle luotu toiminnallisuus joka mahdollistaa siirtymisen kentästä toiseen.
 * Pistelaskurilla pisteiden säilyvyys siirtyessä kentältä toiselle.
 * Luotu uudelle pelikentälle kerättävät esineet ja "exit" ruutu.
+
+## Viikko 7
+* Elämät luotu.
+* Viholliset ja niiden toiminnallsuus.
+* Pelin lopetus viimeisen kentän jälkeen.
+* Tason vaikeus valittavissa: Beginner, Hard.
+* Uusi Boost: pelaaja voi kerätä taikajuoman, josta hän saa lisänopeutta.
+* Törmäys vihollisen kanssa johtaa elämän menetykseen ja liian monen menetys johtaa kuolemaan.
