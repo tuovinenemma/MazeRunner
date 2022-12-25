@@ -12,4 +12,7 @@
 | 8.12. | 4    | Uusi kenttä
 | 10.12. | 5    | Toiminnallisuutta uudelle kentälle
 | 13.12. | 5    | Koodin parantamista, luokkien järjestelyä, pylint, dokumentaatio
-| Yht. | 51    | 
+| 15.12. | 7    | Viholliset ja niiden toiminnallisuus
+| 17.12. | 3    | Exit ja uusi boost luotu
+| 25.12. | 7    | Pistelaskuri paremmaksi ja tasoille vaikeustasot
+| Yht. | 68    | 
